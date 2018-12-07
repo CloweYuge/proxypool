@@ -3,8 +3,8 @@ from random import choice
 # --------------------调度器相关----------------------#
 TESTER_CYCLE = 60              # 检测代理有效性的间隔时间，秒为单位，这里设置为20分钟测试一批
 GETTER_CYCLE = 60 * 60 * 12         # 获取器的间隔时间，以秒为单位，代理不要爬太快,这里设置了半天爬一次，一般代理网站也就只一天更新一次！！！
-TESTER_ENABLED = True               # 测试器开关
-GETTER_ENABLED = True              # 获取器开关             # 在测试环境中用来测试相应模块
+TESTER_ENABLED = False               # 测试器开关
+GETTER_ENABLED = False              # 获取器开关             # 在测试环境中用来测试相应模块
 API_ENABLED = True                 # api接口开关
 
 # --------------------测试器相关----------------------#
@@ -17,8 +17,7 @@ TEST_URL = {                        # 测试url站点，用来筛选代理，每
     'Httptest': 'http://httpbin.org/get',
     'Urlbaidu': 'https://www.baidu.com',
     'Urlweibo': 'https://www.weibo.com',
-    'Urlff8': 'https://www.ff8.xyz',
-	'Urlmweibo': 'https://m.weibo.cn/'
+    'Urlff8': 'https://www.ff8.xyz'
 }
 # 键名以Http开头表示这个站点是用来测试代理有效性的，这个站点应该设置为不会封ip的站点
 # 键名以Url开头表示站点是用来实际爬取数据的，测试器会把可以访问该站点的代理筛选出来，但它不会从基础池中移除，因为这个代理或许也能访问其它站点
